@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1028647640057",
+    "project_id": "harrypotterjetpackapp",
+    "storage_bucket": "harrypotterjetpackapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1028647640057:android:f7d03b1eb188319fe77b28",
+        "android_client_info": {
+          "package_name": "com.cherlanmiche.hpjetpackapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1028647640057-77e4480sl2kgvr8hel7u36oormsoaa0p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAMPFNNsgz4o1vBLcgMqPX9PnXPiZHQcpI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1028647640057-77e4480sl2kgvr8hel7u36oormsoaa0p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
