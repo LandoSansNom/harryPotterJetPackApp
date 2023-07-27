@@ -6,9 +6,7 @@ import com.cherlanmiche.hpjetpackapp.ui.navigation.navgraph.AllDestinations.CHAR
 
 object AllDestinations {
     const val CHARACTERS = "Characters"
-    const val MEALOFDAY = "Meal Of Day"
-    const val CATEGORIES = "Categories"
-    const val SETTINGS = "Settings"
+
 }
 
 class AppNavigationActions(private val navController: NavHostController) {

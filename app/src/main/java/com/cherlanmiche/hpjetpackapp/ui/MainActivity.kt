@@ -1,4 +1,4 @@
-package com.cherlanmiche.hpjetpackapp
+package com.cherlanmiche.hpjetpackapp.ui
 
 import android.content.pm.PackageManager
 import android.os.Build

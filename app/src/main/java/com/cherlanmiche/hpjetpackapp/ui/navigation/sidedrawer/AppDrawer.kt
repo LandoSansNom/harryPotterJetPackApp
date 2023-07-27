@@ -25,9 +25,6 @@ fun AppDrawer(
     route: String,
     modifier: Modifier = Modifier,
     navigateToHome: () -> Unit = {},
-    navigateToMealOfDay: () -> Unit = {},
-    navigateToCategories: () -> Unit = {},
-    navigateToSettings: () -> Unit = {},
     closeDrawer: () -> Unit = {},
 ) {
     ModalDrawerSheet(modifier = Modifier) {

@@ -38,9 +38,9 @@ fun hpJetPackAppNavGraph(
     ModalNavigationDrawer(drawerContent = {
         AppDrawer(
             route = currentRoute,
-            navigateToHome = { navigationActions.navigateToHome() },
-            closeDrawer = { coroutineScope.launch { drawerState.close() } },
-            modifier= Modifier)
+            modifier= Modifier,
+            navigateToHome = { navigationActions.navigateToHome() }
+        ) { coroutineScope.launch { drawerState.close() } }
     }, drawerState = drawerState) {
         Scaffold(
             topBar = {
