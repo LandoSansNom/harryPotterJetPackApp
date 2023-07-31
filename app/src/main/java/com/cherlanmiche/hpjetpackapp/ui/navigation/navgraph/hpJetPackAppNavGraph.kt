@@ -14,6 +14,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.cherlanmiche.hpjetpackapp.ui.navigation.sidedrawer.AppDrawer
+import com.cherlanmiche.hpjetpackapp.ui.screens.CharacterDetailsScreen
 import com.cherlanmiche.hpjetpackapp.ui.screens.CharactersScreen
 import com.cherlanmiche.hpjetpackapp.ui.screens.CharactersViewModel
 import kotlinx.coroutines.CoroutineScope
@@ -45,7 +46,7 @@ fun hpJetPackAppNavGraph(
         Scaffold(
             topBar = {
                 TopAppBar(title = {
-                    val titleText = if (currentRoute == "DetailsScreen/{mealId}") {
+                    val titleText = if (currentRoute == "CharacterDetailsScreen/{characterId}") {
                         "Details"
                     } else {
                         currentRoute
@@ -65,12 +66,20 @@ fun hpJetPackAppNavGraph(
                     colors = TopAppBarDefaults.smallTopAppBarColors(containerColor = MaterialTheme.colorScheme.primaryContainer)
                 )
             }, modifier = Modifier
-        ) {
+        ) { it ->
             NavHost(
                 navController = navController,
                 startDestination = AllDestinations.CHARACTERS,
                 modifier = modifier.padding(it)
             ) {
+
+                composable("CharacterDetailsScreen/{characterId}") { backStackEntry ->
+                    val characterId = backStackEntry.arguments?.getString("characterId")
+                    val character = viewModel.characters.value?.firstOrNull { it.id == characterId }
+                    if (character != null) {
+                        CharacterDetailsScreen(character)
+                    }
+                }
 
                 composable(AllDestinations.CHARACTERS) {
                     CharactersScreen(navController, viewModel)

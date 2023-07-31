@@ -33,11 +33,13 @@ import androidx.compose.ui.graphics.ImageBitmap
 import androidx.compose.ui.graphics.asImageBitmap
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.FutureTarget
+import com.cherlanmiche.hpjetpackapp.R
 import com.cherlanmiche.hpjetpackapp.data.model.CharacterModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
@@ -49,8 +51,8 @@ fun CharactersScreen(navController: NavHostController, viewModel: CharactersView
     Column {
         LazyColumn {
             items(characters ?: listOf()) { character ->
-                CharacterItem(character, navController) {
-                    //navController.navigate("DetailsScreen/${character.id}")
+                CharacterItem(character) {
+                    navController.navigate("CharacterDetailsScreen/${character.id}")
                 }
             }
         }
@@ -61,7 +63,6 @@ fun CharactersScreen(navController: NavHostController, viewModel: CharactersView
 @Composable
 fun CharacterItem(
     character: CharacterModel,
-    navController: NavHostController,
     onItemClick: () -> Unit
 ) {
     val context = LocalContext.current
@@ -84,7 +85,8 @@ fun CharacterItem(
         }
     ) {
         Row(
-            modifier = Modifier.padding(10.dp)
+            modifier = Modifier
+                .padding(5.dp)
                 .background(Color(41, 101, 135)),
             verticalAlignment = Alignment.CenterVertically
         ) {
@@ -100,6 +102,14 @@ fun CharacterItem(
                             contentScale = ContentScale.Crop
                 )
 
+                Spacer(modifier = Modifier.width(16.dp))
+            } ?: run {
+                Image(painter = painterResource(id = R.drawable.placeholder_image)
+                    , contentDescription = "Image for ${character.actor}",
+                    modifier = Modifier
+                        .size(80.dp) // Set the size of the image slightly larger
+                        .aspectRatio(1f),
+                    contentScale = ContentScale.Crop)
                 Spacer(modifier = Modifier.width(16.dp))
             }
                 Text(

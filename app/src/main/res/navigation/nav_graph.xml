@@ -2,7 +2,7 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/nav_graph">
     <composable
-        android:id="@+id/DetailsCharacterScreen"
+        android:id="@+id/CharacterDetailsScreen"
         android:label="Details of the Character"
         />
 </navigation>
