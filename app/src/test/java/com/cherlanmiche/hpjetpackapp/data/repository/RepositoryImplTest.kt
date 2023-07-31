@@ -1,7 +1,6 @@
 package com.cherlanmiche.hpjetpackapp.data.repository
 
 import com.cherlanmiche.harrypotter.data.remote.harryPotterCall
-import com.itc.kotlinknightsproject.data.repository.RepositoryImpl
 import kotlinx.coroutines.test.runTest
 import org.junit.Assert.assertEquals
 import org.junit.Before
@@ -11,26 +10,38 @@ import org.mockito.Mockito
 import org.mockito.MockitoAnnotations
 
 
-class RepositoryImplTest{
-  lateinit var repository: Repository
+class RepositoryImplTest {
+    lateinit var repository: Repository
 
-  @Mock
-  lateinit var harryPotterCall: harryPotterCall
+    @Mock
+    lateinit var harryPotterCall: harryPotterCall
 
-  @Before
-  fun setup(){
-   MockitoAnnotations.openMocks(this)
-   repository = RepositoryImpl(harryPotterCall)
-  }
+    @Before
+    fun setup() {
+        MockitoAnnotations.openMocks(this)
+        repository = RepositoryImpl(harryPotterCall)
+    }
 
- @Test
- fun getCharacterByIdTest() = runTest{
+    @Test
+    fun getCharacterByIdTest() = runTest {
 
-  val characterModel =  CharacterModelSample.getSampleCharacter()
+        Mockito.`when`(harryPotterCall.getAllCharcters())
+            .thenReturn(CharacterModelSample.allCharacters)
 
-  Mockito.`when`(harryPotterCall.getCharacterById("character_id_123")).thenReturn(characterModel)
+        assertEquals(repository.getAllCharcters(), CharacterModelSample.allCharacters)
 
-  assertEquals(repository.getCharacterById("character_id_123"), characterModel)
- }
 
- }
+    }
+
+    @Test
+    fun getAllCharacterTest() = runTest {
+
+        Mockito.`when`(harryPotterCall.getCharacterById("character_id_123"))
+            .thenReturn(CharacterModelSample.character1)
+
+        assertEquals(repository.getCharacterById("character_id_123"), CharacterModelSample.character1)
+
+
+    }
+
+}

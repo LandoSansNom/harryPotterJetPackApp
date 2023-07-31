@@ -40,8 +40,6 @@ class MainActivity : ComponentActivity() {
             // Get new FCM registration token
             val token = task.result
 
-            // Log and toast
-            Log.d("Token: ", token)
         })
         setContent {
             hpJetPackAppTheme {
