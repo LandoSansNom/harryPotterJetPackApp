@@ -53,6 +53,7 @@ fun CharactersScreen(navController: NavHostController, viewModel: CharactersView
             items(characters ?: listOf()) { character ->
                 CharacterItem(character) {
                     navController.navigate("CharacterDetailsScreen/${character.id}")
+
                 }
             }
         }

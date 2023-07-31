@@ -4,6 +4,7 @@ package com.cherlanmiche.hpjetpackapp.ui.navigation.navgraph
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.Menu
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
@@ -44,28 +45,45 @@ fun hpJetPackAppNavGraph(
         ) { coroutineScope.launch { drawerState.close() } }
     }, drawerState = drawerState) {
         Scaffold(
+
             topBar = {
-                TopAppBar(title = {
-                    val titleText = if (currentRoute == "CharacterDetailsScreen/{characterId}") {
-                        "Details"
-                    } else {
-                        currentRoute
-                    }
-                    Text(text = titleText)
-                },
-                    modifier = Modifier.fillMaxWidth(),
-                    navigationIcon = {
-                        IconButton(onClick = {
-                            coroutineScope.launch { drawerState.open() }
-                        }, content = {
-                            Icon(
-                                imageVector = Icons.Default.Menu, contentDescription = null
-                            )
-                        })
-                    },
-                    colors = TopAppBarDefaults.smallTopAppBarColors(containerColor = MaterialTheme.colorScheme.primaryContainer)
-                )
-            }, modifier = Modifier
+                if (currentRoute != "CharacterDetailsScreen/{characterId}") {
+                    TopAppBar(
+                        title = {
+
+                            Text(text = currentRoute)
+                        },
+                        modifier = Modifier.fillMaxWidth(),
+                        navigationIcon = {
+                            IconButton(onClick = {
+                                coroutineScope.launch { drawerState.open() }
+                            }, content = {
+                                Icon(
+                                    imageVector = Icons.Default.Menu, contentDescription = null
+                                )
+                            })
+                        },
+                        colors = TopAppBarDefaults.smallTopAppBarColors(containerColor = MaterialTheme.colorScheme.primaryContainer)
+                    )
+                }else{
+                    TopAppBar(
+                        title = {
+
+                            Text(text = "Details")
+                        },
+                        modifier = Modifier.fillMaxWidth(),
+                        navigationIcon = {
+                            IconButton(onClick = {
+                                navController.navigateUp()
+                            }, content = {
+                                Icon(
+                                    imageVector = Icons.Filled.ArrowBack, contentDescription = "Back"
+                                )
+                            })
+                        },
+                        colors = TopAppBarDefaults.smallTopAppBarColors(containerColor = MaterialTheme.colorScheme.primaryContainer)
+                    )
+                } }, modifier = Modifier
         ) { it ->
             NavHost(
                 navController = navController,
