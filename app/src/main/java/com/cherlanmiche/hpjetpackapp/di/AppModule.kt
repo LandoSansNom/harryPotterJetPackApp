@@ -4,7 +4,7 @@ package com.cherlanmiche.hpjetpackapp.di
 import com.cherlanmiche.harrypotter.data.remote.ApiDetails
 import com.cherlanmiche.harrypotter.data.remote.harryPotterCall
 import com.cherlanmiche.hpjetpackapp.data.repository.Repository
-import com.itc.kotlinknightsproject.data.repository.RepositoryImpl
+import com.cherlanmiche.hpjetpackapp.data.repository.RepositoryImpl
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

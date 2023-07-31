@@ -1,8 +1,7 @@
-package com.itc.kotlinknightsproject.data.repository
+package com.cherlanmiche.hpjetpackapp.data.repository
 
 import com.cherlanmiche.harrypotter.data.remote.harryPotterCall
 import com.cherlanmiche.hpjetpackapp.data.model.CharacterModel
-import com.cherlanmiche.hpjetpackapp.data.repository.Repository
 import javax.inject.Inject
 
 class RepositoryImpl @Inject constructor(
