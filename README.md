@@ -39,7 +39,10 @@ I'll be adding more in the near future to complete the project. You may also sug
 ### Built With
 
 
-* [[JetPack Compose]][JetpackCompose-url]
+* [JetPack Compose][JetpackCompose-url]
+* [Kotlin][Kotlin-url]
+* [LiveData]
+* [MVVM]
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -108,5 +111,6 @@ Project Link: [https://github.com/LandoSansNom/harryPotterJetPackApp](https://gi
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [JetpackCompose-url]: https://developer.android.com/jetpack/compose/
+[Kotlin-url]: https://kotlinlang.org/
 
 
