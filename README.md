@@ -22,8 +22,6 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
-
 Harry Potter is one of the famous movie of all time. We like it a lot and we would certainly love to have a spot where we can discover all the Harry Potter characters together
 That's why I build this app. It represents a space where:
 * you can see all the characters from Harry Potter
@@ -52,7 +50,7 @@ I'll be adding more in the near future to complete the project. You may also sug
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+When you open the app you see the list of characters in Harry Potter
 
 _For more examples, please refer to the [Documentation](https://example.com)_
 
