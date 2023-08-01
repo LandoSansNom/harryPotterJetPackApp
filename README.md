@@ -51,8 +51,13 @@ I'll be adding more in the near future to complete the project. You may also sug
 ## Usage
 
 When you open the app you see the list of characters in Harry Potter
+[List of characters](https://github.com/LandoSansNom/harryPotterJetPackApp/blob/main/screens/characters_list.png)
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+When you click on a single character you will see detail about the character, you can click on the back arrow to go back
+[Detail of a single character](https://github.com/LandoSansNom/harryPotterJetPackApp/blob/main/screens/detail_character.png)
+
+This is the side drawer navigation
+[Side drawer navigation](https://github.com/LandoSansNom/harryPotterJetPackApp/blob/main/screens/side_drawer_navigation.png)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
