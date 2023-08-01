@@ -12,7 +12,7 @@
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#features">Features</a></li>
     <li><a href="#contact">Contact</a></li>
   </ol>
 </details>
@@ -39,8 +39,8 @@ I'll be adding more in the near future to complete the project. You may also sug
 
 * [JetPack Compose][JetpackCompose-url]
 * [Kotlin][Kotlin-url]
-* [LiveData]
-* [MVVM]
+* LiveData
+* MVVM
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -63,8 +63,8 @@ This is the side drawer navigation
 
 
 
-<!-- ROADMAP -->
-## Roadmap
+<!-- FEATURES -->
+## Features
 
 - [x] Add lazy column which displays a list of characters
 - [x] Add a side drawer navigation bar to allow navigation between different pages
